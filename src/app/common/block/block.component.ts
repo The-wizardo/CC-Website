@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './block.component.scss'
 })
 export class BlockComponent {
-  @Input() imageUrl: string = '';
-  @Input() name: string = '';
-  @Input() content: string = '';
+  @Input() name!: string;
+  @Input() imageUrl!: string;
+  @Input() content!: string;
 }
