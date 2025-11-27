@@ -13,26 +13,23 @@
         <a routerLink="/home" routerLinkActive="gradient-text"
           class="nav-link hover:gradient-text hover:underline">Home</a>
 
-        <a routerLink="/about" routerLinkActive="gradient-text"
-          class="nav-link hover:gradient-text hover:underline">About Us</a>
+        <a routerLink="/aboutus" routerLinkActive="gradient-text"
+          class="nav-link hover:gradient-text hover:underline">Aboutus</a>
 
         <!-- Services Dropdown -->
         <div class="relative group">
-          <a routerLinkActive="gradient-text" class="flex hover:gradient-text items-center space-x-1 text-gray-700 font-medium">
+          <a routerLinkActive="gradient-text"
+            class="flex hover:gradient-text items-center space-x-1 text-gray-700 font-medium">
             <span class="hover:gradient-text">Services</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19 9l-7 7-7-7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </a>
 
-          <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200">
-            <a routerLink="/services" 
-               routerLinkActive="text-blue-600 underline"
-               class="dropdown-link">Market Place</a>
-            <a routerLink="/technology"
-               routerLinkActive="text-blue-600 underline"
-               class="dropdown-link">Technology</a>
+          <div
+            class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200">
+            <a routerLink="/services" routerLinkActive="text-blue-600 underline" class="dropdown-link">Market Place</a>
+            <a routerLink="/technology" routerLinkActive="text-blue-600 underline" class="dropdown-link">Technology</a>
           </div>
         </div>
 
