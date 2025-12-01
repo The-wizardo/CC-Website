@@ -9,8 +9,19 @@ import { RouterLink } from "@angular/router";
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
- openSection: string | null = null;
+  openSection: string | null = null;
   isMobile = false;
+
+  showPrivacy = false;
+  showTerms = false;
+
+  openPrivacy() { this.showPrivacy = true; }
+  openTerms() { this.showTerms = true; }
+
+  closeModals() {
+    this.showPrivacy = false;
+    this.showTerms = false;
+  }
 
   @HostListener('window:resize')
   onResize() {

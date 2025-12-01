@@ -23,9 +23,8 @@
           Legal
         </h3>
         <ul class="space-y-3">
-          <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
-          <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+          <li><a (click)="openPrivacy()" class="hover:text-white transition cursor-pointer">Privacy Policy</a></li>
+          <li><a (click)="openTerms()" class="hover:text-white transition cursor-pointer">Terms of Service</a></li>
         </ul>
       </div>
 
@@ -60,7 +59,205 @@
 
     <!-- Bottom copyright -->
     <div class="text-center text-gray-500 text-sm">
-      © 2025 <span class="font-bold text-blue-500">Correct Cloud</span> — TRANSFORM &bull; UPGRADE &bull; EXCEL
+      © 2025 <span class="font-bold text-blue-500">Correct Cloud</span> - TRANSFORM &bull; UPGRADE &bull; EXCEL
     </div>
   </div>
 </footer>
+
+<!-- PRIVACY POLICY MODAL -->
+<div *ngIf="showPrivacy" class="fixed inset-0 flex items-center justify-center z-50 px-4">
+  <div class="bg-white max-w-3xl w-full p-8 rounded-2xl shadow-2xl relative">
+    <button 
+      class="absolute top-3 right-3 text-slate-600 hover:text-black text-lg"
+      (click)="closeModals()">
+      ✕
+    </button>
+
+    <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
+
+    <div class="text-sm text-slate-700 space-y-4 max-h-[70vh] overflow-y-auto pr-2">
+
+      <p>
+        This Privacy Policy describes how <strong>Correct Cloud Pvt Ltd</strong> (“we”, “our”, “us”) 
+        collects, uses, and protects your information when you use our website, applications, and services.
+      </p>
+
+      <h3 class="text-lg font-semibold">1. Information We Collect</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Contact details</strong> — name, email, phone, company, role.</li>
+        <li><strong>Usage data</strong> — pages visited, actions taken, interaction logs.</li>
+        <li><strong>Technical data</strong> — IP address, browser, OS, device type.</li>
+        <li><strong>Communication data</strong> — emails, support tickets, inquiries.</li>
+        <li><strong>Account information</strong> if you use our software services.</li>
+      </ul>
+
+      <h3 class="text-lg font-semibold">2. How We Use Your Information</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Provide, operate, and improve our services.</li>
+        <li>Respond to support requests and inquiries.</li>
+        <li>Secure systems and prevent fraudulent activity.</li>
+        <li>Send essential updates and service notifications.</li>
+        <li>Comply with legal and regulatory requirements.</li>
+      </ul>
+
+      <h3 class="text-lg font-semibold">3. Cookies & Tracking</h3>
+      <p>
+        We use cookies and tracking tools to improve performance, enhance security, and personalize user experience.
+        You may control cookie settings through your browser.
+      </p>
+
+      <h3 class="text-lg font-semibold">4. How We Share Information</h3>
+      <p>We do <strong>not</strong> sell your data. Information may be shared only with:</p>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Verified service providers (hosting, analytics, support).</li>
+        <li>Business partners needed to deliver specific solutions.</li>
+        <li>Legal authorities when required under law.</li>
+        <li>Successors in case of a merger or acquisition.</li>
+      </ul>
+
+      <h3 class="text-lg font-semibold">5. Data Security</h3>
+      <p>
+        We implement organizational and technical measures to protect your data against unauthorized access,
+        misuse, or loss. We continuously review and improve these measures.
+      </p>
+
+      <h3 class="text-lg font-semibold">6. Data Retention</h3>
+      <p>
+        Data is retained only for as long as necessary to fulfill the purpose it was collected for, unless
+        a longer period is required by law.
+      </p>
+
+      <h3 class="text-lg font-semibold">7. Your Rights</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Request access to your personal data.</li>
+        <li>Request correction or deletion.</li>
+        <li>Request restrictions on certain types of processing.</li>
+        <li>Withdraw consent where processing is based on consent.</li>
+      </ul>
+
+      <h3 class="text-lg font-semibold">8. Third-Party Services</h3>
+      <p>
+        Our site may include integrations with Microsoft 365, Azure, or other platforms.
+        We are not responsible for third-party privacy practices.
+      </p>
+
+      <h3 class="text-lg font-semibold">9. Children’s Privacy</h3>
+      <p>
+        We do not knowingly collect personal data from children under 16.
+      </p>
+
+      <h3 class="text-lg font-semibold">10. Changes to This Policy</h3>
+      <p>
+        We may update this Privacy Policy occasionally. Continued use of our services implies acceptance of the updated policy.
+      </p>
+
+      <h3 class="text-lg font-semibold">11. Contact Us</h3>
+      <p>
+        For questions or requests:
+        <br><strong>Email:</strong> hr&#64;correctcloud.io
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<!-- TERMS OF SERVICE MODAL -->
+<div *ngIf="showTerms" class="fixed inset-0 flex items-center justify-center z-50 px-4">
+  <div class="bg-white max-w-3xl w-full p-8 rounded-2xl shadow-2xl relative">
+    <button 
+      class="absolute top-3 right-3 text-slate-600 hover:text-black text-lg"
+      (click)="closeModals()">
+      ✕
+    </button>
+
+    <h2 class="text-2xl font-bold mb-4">Terms of Service</h2>
+
+    <div class="text-sm text-slate-700 space-y-4 max-h-[70vh] overflow-y-auto pr-2">
+
+      <p>
+        These Terms of Service govern your access to and use of services operated by  
+        <strong>Correct Cloud Pvt Ltd</strong>. By using our website or services, you agree to these Terms.
+      </p>
+
+      <h3 class="text-lg font-semibold">1. Use of Services</h3>
+      <p>
+        You agree to use our services responsibly, lawfully, and without attempting to disrupt,
+        misuse, or gain unauthorized access to systems.
+      </p>
+
+      <h3 class="text-lg font-semibold">2. Accounts & Responsibilities</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Maintain accurate account information.</li>
+        <li>Keep credentials confidential.</li>
+        <li>Notify us immediately of unauthorized access.</li>
+        <li>You are responsible for all actions under your account.</li>
+      </ul>
+
+      <h3 class="text-lg font-semibold">3. Customer Data</h3>
+      <p>
+        You retain ownership of data shared with us. We use it only to deliver and improve services
+        or comply with legal requirements.
+      </p>
+
+      <h3 class="text-lg font-semibold">4. Prohibited Use</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Illegal or harmful activities.</li>
+        <li>Hacking, malware distribution, or security attacks.</li>
+        <li>Spamming, phishing, or impersonation.</li>
+        <li>Violating privacy or intellectual property rights.</li>
+      </ul>
+
+      <h3 class="text-lg font-semibold">5. Intellectual Property</h3>
+      <p>
+        All software, text, logos, and materials are owned by Correct Cloud. You may not copy,
+        modify, or distribute them without written permission.
+      </p>
+
+      <h3 class="text-lg font-semibold">6. Third-Party Integrations</h3>
+      <p>
+        Our services may integrate with Microsoft 365, Azure, and other platforms.
+        We are not responsible for issues caused by third-party services.
+      </p>
+
+      <h3 class="text-lg font-semibold">7. Service Modifications</h3>
+      <p>
+        We may modify, update, or discontinue parts of the service at any time.
+      </p>
+
+      <h3 class="text-lg font-semibold">8. Disclaimer</h3>
+      <p>
+        Services are provided “as is”. We do not guarantee error-free or uninterrupted service.
+      </p>
+
+      <h3 class="text-lg font-semibold">9. Limitation of Liability</h3>
+      <p>
+        We are not liable for indirect, incidental, or consequential damages.  
+        Total liability is limited to the amount paid for services (if applicable).
+      </p>
+
+      <h3 class="text-lg font-semibold">10. Termination</h3>
+      <p>
+        We may suspend access if you violate these Terms.  
+        Obligations like confidentiality and IP survive termination.
+      </p>
+
+      <h3 class="text-lg font-semibold">11. Updates to Terms</h3>
+      <p>
+        We may update these Terms. Continued use means acceptance.
+      </p>
+
+      <h3 class="text-lg font-semibold">12. Governing Law</h3>
+      <p>
+        These Terms are governed by the laws of India.  
+        Disputes will be resolved in Pune, Maharashtra courts.
+      </p>
+
+      <h3 class="text-lg font-semibold">13. Contact Us</h3>
+      <p>
+        For questions:
+        <br><strong>Email:</strong> hr&#64;correctcloud.io
+      </p>
+
+    </div>
+  </div>
+</div>

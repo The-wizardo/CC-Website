@@ -7,11 +7,15 @@ import { TechnologyComponent } from './technology/technology.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 
 export const routes: Routes = [
-    {path:'',component:HomeComponent},
-    {path:'home',component:HomeComponent},
-    {path:'partners',component:PartnersComponent},
-    {path:'contactus',component:ContactusComponent},
-    {path:'services',component:ServiceComponent},
-    {path:'technology',component:TechnologyComponent},
-    {path:'aboutus',component:AboutusComponent}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+
+  { path: 'home', component: HomeComponent },
+  { path: 'partners', component: PartnersComponent },
+  { path: 'contactus', component: ContactusComponent },
+  { path: 'services', component: ServiceComponent },
+  { path: 'technology', component: TechnologyComponent },
+  { path: 'aboutus', component: AboutusComponent },
+
+  // optional: catch-all
+  { path: '**', redirectTo: '/home' }
 ];
