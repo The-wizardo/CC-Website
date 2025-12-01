@@ -4,12 +4,11 @@
   <div class="absolute inset-0 bg-black/60"></div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-3xl px-6">
+  <div class="relative z-10 max-w-5xl px-6">
     <h1
       class="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-[#ffff] to-[#00d4ff] text-transparent bg-clip-text">
       {{ typedText }}
     </h1>
-
 
     <p class="text-lg md:text-xl text-gray-300 mb-8">
       Global technology consulting and services company helping organizations
@@ -31,7 +30,6 @@
   </div>
 </section>
 
-
 <section class="bg-gray-50 py-20">
   <div class="max-w-6xl mx-auto px-6 text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">
@@ -43,43 +41,20 @@
     </p>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <!-- Card 1 -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow">
+      <div *ngFor="let card of featureCards"
+        class="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow">
         <div class="flex justify-center mb-6">
           <!-- Your image goes here -->
-          <img src="/security-shield.png" alt="Enterprise Security" class="w-12 h-12 object-contain" />
+          <img [src]="card.image" alt="{{ card.title }}" class="w-12 h-12 object-contain" />
         </div>
-        <h3 class="text-xl font-semibold text-blue-700 mb-3">Enterprise Security</h3>
+        <h3 class="text-xl font-semibold text-blue-700 mb-3">{{ card.title }}</h3>
         <p class="text-gray-600">
-          Bank-grade security protocols protecting your data and operations.
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow">
-        <div class="flex justify-center mb-6">
-          <img src="/scalability.png" alt="Scalable Growth" class="w-12 h-12 object-contain" />
-        </div>
-        <h3 class="text-xl font-semibold text-blue-700 mb-3">Scalable Growth</h3>
-        <p class="text-gray-600">
-          Solutions that grow with your business, from startup to enterprise.
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow">
-        <div class="flex justify-center mb-6">
-          <img src="/target.png" alt="Precision Delivery" class="w-12 h-12 object-contain" />
-        </div>
-        <h3 class="text-xl font-semibold text-blue-700 mb-3">Precision Delivery</h3>
-        <p class="text-gray-600">
-          Agile methodologies ensuring on-time, on-budget project completion.
+          {{ card.description }}
         </p>
       </div>
     </div>
   </div>
 </section>
-
 
 <section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6 text-center">
@@ -93,87 +68,20 @@
 
     <!-- Services Grid -->
     <div class="grid gap-8 md:grid-cols-3">
-
-      <!-- Card 1 -->
-      <div
-        class="group relative bg-white border border-gray-200 rounded-xl shadow-sm p-8 text-left transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50">
-        <!-- Image placeholder (you’ll replace this) -->
+      <div *ngFor="let card of servicesCards"
+        class="group relative bg-white border border-gray-200 rounded-xl shadow-sm p-8 text-left transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:bg-gradient-to-r {{ card.hoverClass }}">
         <div class="mb-5">
-          <img src="/lighting.png" alt="Service 1" class="w-12 h-12 object-contain" />
+          <img [src]="card.image" [alt]="card.title" class="w-12 h-12 object-contain" />
         </div>
 
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">
-          Technology Transformation Experience
-        </h3>
-        <p class="text-gray-500 mb-4">
-          We empower businesses to stay ahead of the curve by embracing modern
-          technological shifts that drive efficiency and innovation.
-        </p>
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">{{ card.title }}</h3>
+        <p class="text-gray-500 mb-4">{{ card.description }}</p>
+
         <ul class="text-gray-700 space-y-1 mb-6">
-          <li>• DevOps & Cloud Solutions</li>
-          <li>• Cybersecurity</li>
-          <li>• Data Science & Analytics</li>
-          <li>• AI/ML Solutions</li>
-          <li>• Automation</li>
-          <li>• Digital Product Creation</li>
+          <li *ngFor="let p of card.points">• {{ p }}</li>
         </ul>
-        <a href="/technology"
-          class="inline-block text-blue-600 font-semibold border border-blue-600 rounded-md px-5 py-2 group-hover:bg-blue-600 group-hover:text-white transition">
-          Learn More About Our Services →
-        </a>
-      </div>
-
-      <!-- Card 2 -->
-      <div
-        class="group relative bg-white border border-gray-200 rounded-xl shadow-sm p-8 text-left transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:bg-gradient-to-r hover:from-purple-100 hover:to-pink-100">
-        <div class="mb-5">
-          <img src="/worldwide.png" alt="Service 2" class="w-12 h-12 object-contain" />
-        </div>
-
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">
-          Curated Digital & Enterprise Experience
-        </h3>
-        <p class="text-gray-500 mb-4">
-          We build scalable digital ecosystems tailored to enterprise needs,
-          helping organizations operate smarter and reach their customers faster.
-        </p>
-        <ul class="text-gray-700 space-y-1 mb-6">
-          <li>• Web Development</li>
-          <li>• Mobile App Development</li>
-          <li>• E-Commerce (Magento, Shopify & More)</li>
-          <li>• Third-Party Integrations</li>
-          <li>• ITSM (Jira, ServiceNow, Freshservice)</li>
-          <li>• CRM (Salesforce, Hubspot, Zoho)</li>
-        </ul>
-        <a href="/technology"
-          class="inline-block text-blue-600 font-semibold border border-blue-600 rounded-md px-5 py-2 group-hover:bg-blue-600 group-hover:text-white transition">
-          Learn More About Our Services →
-        </a>
-      </div>
-
-      <!-- Card 3 -->
-      <div
-        class="group relative bg-white border border-gray-200 rounded-xl shadow-sm p-8 text-left transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:bg-gradient-to-r hover:from-pink-50 hover:to-red-50">
-        <div class="mb-5">
-          <img src="/rocket.png" alt="Service 3" class="w-12 h-12 object-contain" />
-        </div>
-
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">
-          Branding and Creative Experience
-        </h3>
-        <p class="text-gray-500 mb-4">
-          We blend strategy with creativity to shape compelling brand narratives
-          and engaging digital experiences that connect with audiences.
-        </p>
-        <ul class="text-gray-700 space-y-1 mb-6">
-          <li>• Digital Marketing</li>
-          <li>• SEO & SEM</li>
-          <li>• UI/UX Design</li>
-          <li>• Video Production</li>
-          <li>• Augmented Reality (AR)</li>
-          <li>• Branding & Visual Identity</li>
-        </ul>
-        <a href="/technology"
+        
+        <a [href]="card.link"
           class="inline-block text-blue-600 font-semibold border border-blue-600 rounded-md px-5 py-2 group-hover:bg-blue-600 group-hover:text-white transition">
           Learn More About Our Services →
         </a>
