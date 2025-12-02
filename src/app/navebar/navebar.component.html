@@ -3,7 +3,7 @@
     <div class="flex justify-between h-16 items-center">
 
       <!-- Logo -->
-      <div class="font-bold text-lg text-gray-800">
+      <div routerLink="/home" class="font-bold text-lg text-gray-800 cursor-pointer">
         <img src="/logo.png" alt="Logo" class="h-49" />
       </div>
 
@@ -19,7 +19,7 @@
         <!-- Services Dropdown -->
         <div class="relative group">
           <a routerLinkActive="gradient-text"
-            class="flex hover:gradient-text items-center space-x-1 text-gray-700 font-medium">
+            class="flex hover:gradient-text cursor-pointer items-center space-x-1 text-gray-700 font-medium">
             <span class="hover:gradient-text">Services</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />

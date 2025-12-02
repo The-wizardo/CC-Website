@@ -1,0 +1,9 @@
+.feature-card,
+.service-card {
+  opacity: 0;
+}
+
+// Add these styles to manage the animated state
+.animate__animated {
+  animation-fill-mode: both;
+}
