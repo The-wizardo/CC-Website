@@ -1,6 +1,5 @@
 <div class="min-h-screen flex flex-col bg-white text-slate-800">
 
-
     <!-- MAIN CONTENT -->
     <main class="flex-1">
 
@@ -13,7 +12,7 @@
 
             <div class="relative max-w-6xl mx-auto px-4 py-20 grid gap-10 lg:grid-cols-2 items-center">
                 <!-- Hero text -->
-                <div>
+                <div class="animate__animated animate__slideInLeft">
                     <p class="text-sm text-slate-200 mb-3">
                         Software Product Engineering & M365 Operations
                     </p>
@@ -41,7 +40,7 @@
                 </div>
 
                 <!-- Hero side card -->
-                <div class="lg:justify-self-end lg:w-[500px] w-full">
+                <div class="animate__animated animate__slideInRight lg:justify-self-end lg:w-[500px] w-full">
                     <div class="p-[2px] rounded-3xl bg-gradient-to-r from-[#090979] to-[#00d4ff] shadow-xl">
                         <div class="bg-slate-950/70 rounded-3xl p-6 border border-white/5">
                             <p class="text-3xl text-slate-100 mb-3">What we care about</p>
@@ -107,36 +106,14 @@
                             At a glance
                         </h3>
 
-                        <dl class="space-y-4 text-sm text-slate-700">
-
+                        <dl *ngFor="let card of premiumCard" class="space-y-4 text-sm text-slate-700">
                             <!-- ROW -->
                             <div class="flex gap-6 border-b border-slate-100 pb-3">
-                                <dt class="text-slate-500 w-36">Primary focus</dt>
-                                <dd class="font-medium flex-1">Software Product Development &
-                                    <br> M365 Ecosystem Support</dd>
+                                <dt class="text-slate-500 w-36">{{ card.title }}</dt>
+                                <dd class="font-medium flex-1">{{ card.description }}</dd>
                             </div>
-
-                            <!-- ROW -->
-                            <div class="flex gap-6 border-b border-slate-100 pb-3">
-                                <dt class="text-slate-500 w-36">Core strengths</dt>
-                                <dd class="font-medium flex-1">Architecture, DevOps, Automation</dd>
-                            </div>
-
-                            <!-- ROW -->
-                            <div class="flex gap-6 border-b border-slate-100 pb-3">
-                                <dt class="text-slate-500 w-36">Operations</dt>
-                                <dd class="font-medium flex-1">M365 tenant & Security Support</dd>
-                            </div>
-
-                            <!-- ROW -->
-                            <div class="flex gap-6">
-                                <dt class="text-slate-500 w-36">Model</dt>
-                                <dd class="font-medium flex-1">Assessment → Build → Deploy → Automate → Support</dd>
-                            </div>
-
                         </dl>
                     </div>
-
                 </div>
 
             </div>
@@ -409,30 +386,30 @@
                 </div>
 
                 <div class="group relative">
-    
-    <!-- gradient aura -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#090979] to-[#00d4ff]
-                opacity-20 blur-2xl rounded-3xl transition-all duration-500 group-hover:opacity-30">
-    </div>
 
-    <!-- premium card -->
-    <div class="relative bg-white rounded-3xl border border-slate-200 shadow-sm p-8
+                    <!-- gradient aura -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#090979] to-[#00d4ff]
+                opacity-20 blur-2xl rounded-3xl transition-all duration-500 group-hover:opacity-30">
+                    </div>
+
+                    <!-- premium card -->
+                    <div class="relative bg-white rounded-3xl border border-slate-200 shadow-sm p-8
                 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
 
-        <!-- TITLE -->
-        <h3 class="text-xl font-semibold mb-3">Product Lifecycle</h3>
+                        <!-- TITLE -->
+                        <h3 class="text-xl font-semibold mb-3">Product Lifecycle</h3>
 
-        <!-- BULLET LIST -->
-        <ul class="pl-2 space-y-4 text-sm text-slate-600">
-            <li>• Product discovery & requirements</li>
-            <li>• Architecture & technical planning</li>
-            <li>• Development & quality checks</li>
-            <li>• Automation, deployment & rollout</li>
-            <li>• Monitoring, support & iteration</li>
-        </ul>
+                        <!-- BULLET LIST -->
+                        <ul class="pl-2 space-y-4 text-sm text-slate-600">
+                            <li>• Product discovery & requirements</li>
+                            <li>• Architecture & technical planning</li>
+                            <li>• Development & quality checks</li>
+                            <li>• Automation, deployment & rollout</li>
+                            <li>• Monitoring, support & iteration</li>
+                        </ul>
 
-    </div>
-</div>
+                    </div>
+                </div>
 
             </div>
         </section>
