@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-contactus',
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 export class ContactusComponent {
   showSuccess = false;
   showError = false;
+  address:any = environment.ADDRESS;
   sendMessage(form: any) {
     if (form.invalid) {
       alert("Please fill all required fields.");
@@ -28,9 +30,9 @@ export class ContactusComponent {
       details: form.value.details
     };
 
-    const SERVICE_ID = 'service_xs2ukqd';
-    const TEMPLATE_ID = 'template_9m26wfs';
-    const PUBLIC_KEY = '5mxhH9T9aKQE-X_F8';
+    const SERVICE_ID = environment.SERVICE_ID;
+    const TEMPLATE_ID = environment.TEMPLATE_ID;
+    const PUBLIC_KEY = environment.PUBLIC_KEY;
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY)
       .then((response: EmailJSResponseStatus) => {

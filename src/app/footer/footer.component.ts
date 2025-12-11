@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +12,7 @@ import { RouterLink } from "@angular/router";
 export class FooterComponent {
   openSection: string | null = null;
   isMobile = false;
-
+  address:any= environment.ADDRESS;
   showPrivacy = false;
   showTerms = false;
 
